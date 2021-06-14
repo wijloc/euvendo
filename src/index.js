@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
+const filesRoutes = require("./routes/files")
 
 const app = express();
 
@@ -28,6 +29,6 @@ app.use(
   express.static(path.resolve(__dirname, "..", "tmp", "uploads"))
 );
 
-app.use(require("./routes"));
+app.use(filesRoutes);
 
 app.listen(3000);
