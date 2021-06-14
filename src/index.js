@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
 const filesRoutes = require("./routes/files")
+const bucketsRoutes = require("./routes/buckets")
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.use(
 );
 
 app.use(filesRoutes);
+app.use(bucketsRoutes);
 
 app.listen(3000);
